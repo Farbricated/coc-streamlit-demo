@@ -92,48 +92,67 @@ The system ensures that:
 
 ## 🛠 Installation Guide
 
-You can set up this project in **two ways**.
+You can set up this project in **two ways**:  
+- **Option 1:** Install with `requirements.txt` (Recommended)  
+- **Option 2:** Install manually without `requirements.txt`
+
+---
 
 ### **Option 1: With `requirements.txt` (Recommended)**
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/chain-of-custody.git
-cd chain-of-custody
+git clone https://github.com/Farbricated/coc-streamlit-demo.git
+cd coc-streamlit-demo
 
-# Optional: create virtual environment
+# Optional: create a virtual environment
 python -m venv venv
-# Activate
-venv\Scripts\activate  # Windows
-source venv/bin/activate  # macOS/Linux
 
-# Install dependencies
+# Activate the environment
+# Windows
+venv\Scripts\activate
+# macOS/Linux
+source venv/bin/activate
+
+# Install all dependencies
 pip install -r requirements.txt
 
-# Run app
+# Run the application
 streamlit run src/app.py
-# Clone repository
-git clone https://github.com/yourusername/chain-of-custody.git
-cd chain-of-custody
-
-# Optional: create virtual environment
-python -m venv venv
-# Activate
-venv\Scripts\activate  # Windows
-source venv/bin/activate  # macOS/Linux
-
-# Install dependencies manually
-pip install streamlit pandas numpy opencv-python pillow scikit-image stegano pyzbar
-pip install web3 eth-account pymongo python-dotenv
 ```
 
-Environment Variables Setup
+### Option 2: Without requirements.txt (Manual Installation)
+```bash
+# Clone repository
+git clone https://github.com/Farbricated/coc-streamlit-demo.git
+cd coc-streamlit-demo
 
-Create a .env file in the root directory:
-```init
+# Optional: create a virtual environment
+python -m venv venv
+
+# Activate the environment
+# Windows
+venv\Scripts\activate
+# macOS/Linux
+source venv/bin/activate
+
+# Install dependencies manually
+pip install streamlit pillow exifread pandas python-dotenv pymongo dnspython web3 eth-account py-solc-x stegano pyzbar opencv-python-headless numpy scikit-image
+
+# Run the application
+streamlit run src/app.py
+```
+
+### Environment Variables Setup
+
+Before running, create a .env file in the root directory with:
+```ini
 MONGO_URI=your_mongodb_connection_string
 BLOCKCHAIN_PROVIDER_URL=your_blockchain_node_url
 PRIVATE_KEY=your_ethereum_private_key
 ```
+
+
+
 ---
 
 ## ▶️ First Run Checklist
